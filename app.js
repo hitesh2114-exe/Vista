@@ -67,11 +67,6 @@ const sessionOptions = {
     },
 };
 
-app.get("/",(req,res) => {
-    res.send("Welcome to Vista. Click on 'Explore' on top left");
-})
-
-
 app.use(session(sessionOptions));
 app.use(flash());
 

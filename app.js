@@ -31,7 +31,6 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 
-
 async function main() {
     await mongoose.connect(dburl);
 }
@@ -67,6 +66,10 @@ const sessionOptions = {
         httpOnly : true
     },
 };
+
+app.get("/",(req,res) => {
+    res.send("Welcome to Vista. Click on 'Explore' on top left");
+})
 
 
 app.use(session(sessionOptions));
